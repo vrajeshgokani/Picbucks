@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:picbucks/misc/AppLargeText.dart';
 import 'package:picbucks/misc/AppText.dart';
 import 'package:picbucks/misc/search.dart';
+import 'package:picbucks/pages/gallery_page.dart';
 import 'package:picbucks/pages/initial_slider.dart';
 import 'package:picbucks/pages/navbar.dart';
 import 'package:flutter/src/widgets/icon.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ]),
             ),
           ),
-          SizedBox(height: 60),
+          SizedBox(height: 10),
           Container(
             padding: const EdgeInsets.only(bottom: 0, left: 20),
             height: 500,
@@ -91,6 +92,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     mainAxisSpacing: 6, crossAxisCount: 2, crossAxisSpacing: 6),
               ),
             ]),
+          ),
+          IconButton(
+            padding: EdgeInsets.symmetric(horizontal: 152, vertical: 10),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GalleryPage()));
+            },
+            icon: Icon(Icons.add_circle_rounded),
+            color: Colors.cyanAccent,
+            iconSize: 60,
           ),
         ],
       ),
